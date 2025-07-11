@@ -152,9 +152,11 @@ packages:
   gherkin:
     dependency: "direct main"
     description:
-      path: "../dart_gherkin"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "558eb0311ecd76c9037789c26aae78b9906bbf13"
+      url: "https://github.com/therealmodbom/dart_gherkin.git"
+    source: git
     version: "3.1.0"
   glob:
     dependency: transitive

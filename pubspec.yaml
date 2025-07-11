@@ -17,14 +17,14 @@ dependencies:
     flutter_driver:
         sdk: flutter
     meta:
-    # gherkin: ^2.0.2
-    gherkin:
-        path: ../dart_gherkin
+    gherkin: ^3.0.1
+    # gherkin:
+    #     path: ../dart_gherkin
 
 dev_dependencies:
     test:
     pedantic:
-# dependency_overrides:
-#     gherkin:
-#         git:
-#             url: https://github.com/therealmodbom/dart_gherkin.git
+dependency_overrides:
+    gherkin:
+        git:
+            url: https://github.com/therealmodbom/dart_gherkin.git
