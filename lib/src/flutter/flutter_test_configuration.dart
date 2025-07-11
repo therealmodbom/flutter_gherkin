@@ -21,6 +21,8 @@ class FlutterTestConfiguration extends TestConfiguration {
     Iterable<CustomParameter>? customStepParameterDefinitions,
     CreateWorld? createWorld,
     bool stopAfterTestFailed = false,
+    String targetAppPath = 'test_driver/app.dart',
+    restartAppBetweenScenarios = true,
   }) : super(
           features: features,
           reporters: reporters,
@@ -43,7 +45,7 @@ class FlutterTestConfiguration extends TestConfiguration {
     return FlutterTestConfiguration(
       features: [RegExp(featurePath)],
       reporters: [
-        StdoutReporter(MessageLevel.error),
+        StdoutReporter(MessageLevel.verbose),
         ProgressReporter(),
         TestRunSummaryReporter(),
         JsonReporter(path: './report.json'),
@@ -57,9 +59,9 @@ class FlutterTestConfiguration extends TestConfiguration {
       stepDefinitions: steps,
       customStepParameterDefinitions: customStepParameterDefinitions,
       stopAfterTestFailed: true,
-    )
-      ..targetAppPath = targetAppPath
-      ..restartAppBetweenScenarios = true;
+      targetAppPath: targetAppPath,
+      restartAppBetweenScenarios: true,
+    );
   }
 
   /// restarts the application under test between each scenario.
@@ -69,7 +71,7 @@ class FlutterTestConfiguration extends TestConfiguration {
 
   /// The target app to run the tests against
   /// Defaults to "lib/test_driver/app.dart"
-  String targetAppPath = 'lib/test_driver/app.dart';
+  String targetAppPath = 'test_driver/app.dart';
 
   /// Option to define the working directory for the process that runs the app under test (optional)
   /// Handy if your app is separated from your tests as flutter needs to be able to find a pubspec file
