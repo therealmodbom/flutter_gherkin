@@ -16,14 +16,14 @@ Future<void> main() {
     steps,
     featurePath: 'features/*.*.feature',
     targetAppPath: 'test_driver/app.dart',
-  )
-    ..hooks = [
+    hooks: [
       HookExample(),
       // AttachScreenshotOnFailedStepHook(), // takes a screenshot of each step failure and attaches it to the world object
-    ]
-    ..customStepParameterDefinitions = [
+    ],
+    customStepParameterDefinitions: [
       ColourParameter(),
-    ]
+    ],
+  )
     ..logFlutterProcessOutput = true
     ..verboseFlutterProcessLogs = true
     ..restartAppBetweenScenarios = true
